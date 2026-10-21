@@ -28,4 +28,4 @@ jobs:
           MARK_USERNAME: ${{ secrets.CONFLUENCE_USER }}
           MARK_PASSWORD: ${{ secrets.CONFLUENCE_TOKEN }}
         run: |
-          mark -p docs/
+          mark --files "docs/*.md"
