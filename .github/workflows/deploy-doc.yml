@@ -3,7 +3,7 @@ name: Publier la Doc sur Confluence
 on:
   push:
     branches:
-      - main # ou master selon ton repo
+      - docs # ou master selon ton repo
     paths:
       - 'docs/**.md' # Se déclenche uniquement si on modifie la doc
 
