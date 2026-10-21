@@ -1,13 +1,11 @@
 name: Publier la Doc sur Confluence
 
 on:
-  workflow_dispatch: # Ajoute un bouton pour lancer le test manuellement !
+  workflow_dispatch:
   push:
     branches:
       - docs
       - main
-    paths:
-      - 'docs/**.md'
 
 jobs:
   deploy-confluence:
@@ -15,6 +13,14 @@ jobs:
     steps:
       - name: Récupérer le code
         uses: actions/checkout@v4
+        with:
+          ref: docs
+
+      - name: Vérifier les fichiers présents
+        run: |
+          pwd
+          ls -la
+          ls -la docs/ || true
 
       - name: Installer l'outil Mark
         run: |
