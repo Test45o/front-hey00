@@ -1,11 +1,13 @@
 name: Publier la Doc sur Confluence
 
 on:
+  workflow_dispatch: # Ajoute un bouton pour lancer le test manuellement !
   push:
     branches:
-      - docs # ou master selon ton repo
+      - docs
+      - main
     paths:
-      - 'docs/**.md' # Se déclenche uniquement si on modifie la doc
+      - 'docs/**.md'
 
 jobs:
   deploy-confluence:
