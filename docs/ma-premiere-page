@@ -1,15 +1,7 @@
-<!--
-Space: AUTRE
-Title: Ma première page depuis GitHub
--->
+<!-- Space: AUTRE -->
+<!-- Title: Ma premiere page depuis GitHub -->
 
 # Bonjour Confluence ! 🚀
 
-Ceci est un test de **Doc as Code**. 
-Ce texte a été écrit dans GitHub, et publié automatiquement ici !
-
-## Pourquoi c'est génial ?
-* Les développeurs restent dans GitHub
-* La doc est versionnée avec le code
-* Pas besoin de faire des copier-coller
-hey ça va ?------------------------------------------
+Ceci est un test de **Doc as Code**.
+Ce texte a été écrit sur GitHub et publié automatiquement sur Confluence !
