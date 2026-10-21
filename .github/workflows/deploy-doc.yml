@@ -1,0 +1,29 @@
+name: Publier la Doc sur Confluence
+
+on:
+  push:
+    branches:
+      - docs # ou master selon ton repo
+    paths:
+      - 'docs/**.md' # Se déclenche uniquement si on modifie la doc
+
+jobs:
+  deploy-confluence:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer l'outil Mark
+        run: |
+          wget https://github.com/kovetskiy/mark/releases/download/9.3.0/mark_9.3.0_Linux_x86_64.tar.gz
+          tar -xzf mark_9.3.0_Linux_x86_64.tar.gz
+          sudo mv mark /usr/local/bin/
+
+      - name: Envoyer vers Confluence
+        env:
+          MARK_BASE_URL: ${{ secrets.CONFLUENCE_URL }}
+          MARK_USERNAME: ${{ secrets.CONFLUENCE_USER }}
+          MARK_PASSWORD: ${{ secrets.CONFLUENCE_TOKEN }}
+        run: |
+          mark -p docs/
